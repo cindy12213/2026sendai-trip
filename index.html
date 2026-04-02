@@ -87,7 +87,6 @@
                 {
                     day: "5", date: "5/25 (一)", title: "榴岡天滿宮 · 朝市返程", tag: "步行 / 巴士", color: "from-[#a21f3c] to-[#be123c]",
                     items: [
-                        { time: "08:30", spot: "仙台朝市 (早場)", label: "早餐", desc: "最後機會！去朝市吃一碗海鮮丼 (500-1000円)，體驗在地活力。" },
                         { time: "10:00", spot: "榴岡天滿宮", label: "神社", desc: "歷史悠久的神社，環境清幽雅緻。位於仙台站東側。" },
                         { time: "12:00", spot: "仙台朝市 (集合)", label: "美食", desc: "享用海鮮定食。最後補齊毛豆泥甜點與櫻桃、哈密瓜。提前集合預留機場緩衝。" },
                         { time: "14:30", spot: "領行李 ➔ 機場", label: "返程", desc: "JX863 17:20 起飛。搭乘快速線約 14:55 抵達機場，從容辦理登機。" }
@@ -98,7 +97,36 @@
             const navItems = [
                 { id: 0, label: "D1", icon: "🕒" }, { id: 1, label: "D2", icon: "🚗" },
                 { id: 2, label: "D3", icon: "🗻" }, { id: 3, label: "D4", icon: "⛵" },
-                { id: 4, label: "D5", icon: "🛫" }, { id: 'info', label: "資訊", icon: "ℹ️" }
+                { id: 4, label: "D5", icon: "🛫" }, 
+                { id: 'jp', label: "日語", icon: "🗣️" },
+                { id: 'info', label: "資訊", icon: "ℹ️" }
+            ];
+
+            const jpPhrases = [
+                { cat: "基本招呼", list: [
+                    { cn: "你好", jp: "こんにちは", ro: "Konnichiwa" },
+                    { cn: "謝謝", jp: "ありがとうございます", ro: "Arigatou gozaimasu" },
+                    { cn: "對不起 / 請問", jp: "すみません", ro: "Sumimasen" },
+                    { cn: "不好意思 (輕微)", jp: "失礼します", ro: "Shitsurei shimasu" }
+                ]},
+                { cat: "餐廳 / 購物", list: [
+                    { cn: "請給我這個", jp: "これをください", ro: "Kore wo kudasai" },
+                    { cn: "請問多少錢？", jp: "いくらですか？", ro: "Ikura desu ka?" },
+                    { cn: "請結帳", jp: "お会計をお願いします", ro: "Okaikei wo onegaishimasu" },
+                    { cn: "有英文菜單嗎？", jp: "英語のメニューはありますか？", ro: "Eigo no menyu wa arimasu ka?" },
+                    { cn: "推薦的是什麼？", jp: "おすすめは何ですか？", ro: "Osusume wa nan desu ka?" }
+                ]},
+                { cat: "問路 / 交通", list: [
+                    { cn: "廁所在哪裡？", jp: "トイレはどこですか？", ro: "Toire wa doko desu ka?" },
+                    { cn: "請問這裡是哪裡？", jp: "ここはどこですか？", ro: "Koko wa doko desu ka?" },
+                    { cn: "我想去 (地點)", jp: "(地點) へ行きたいです", ro: "(Place) e ikitai desu" },
+                    { cn: "會說英文嗎？", jp: "英語が話せますか？", ro: "Eigo ga hanasemasu ka?" }
+                ]},
+                { cat: "緊急 / 需求", list: [
+                    { cn: "請救救我 / 幫幫我", jp: "助けてください", ro: "Tasukete kudasai" },
+                    { cn: "我不舒服", jp: "気分が悪いです", ro: "Kibun ga warui desu" },
+                    { cn: "可以拍照嗎？", jp: "写真を撮ってもいいですか？", ro: "Shashin wo tottemo ii desu ka?" }
+                ]}
             ];
 
             const openMap = (spot) => {
@@ -127,7 +155,7 @@
                                     <p className="text-xs text-rose-700 leading-relaxed">• 台灣駕照正本 / 日文譯本 / 護照<br/>(非國際駕照，請務必攜帶譯本)</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                                    <h3 className="font-serif-jp font-bold text-lg mb-3 text-slate-700">☀️ 早餐必吃清單</h3>
+                                    <h3 className="font-serif-jp font-bold text-lg mb-3 text-slate-700">☀️ 早餐推薦</h3>
                                     <div className="space-y-3">
                                         <div className="p-3 bg-stone-50 rounded">
                                             <p className="text-xs font-bold text-[#c29b61]">仙台朝市海鮮丼</p>
@@ -157,6 +185,32 @@
                                         <li>✅ 查詢「蔵王山頂直播」確認能見度</li>
                                     </ul>
                                 </div>
+                            </div>
+                        ) : activeTab === 'jp' ? (
+                            <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
+                                <div className="mb-4">
+                                    <h2 className="text-2xl font-serif-jp font-black text-slate-800">日本旅遊必備日語</h2>
+                                    <p className="text-xs text-slate-400 mt-1 tracking-wider uppercase">Essential Japanese Phrases</p>
+                                </div>
+                                {jpPhrases.map((group, gIdx) => (
+                                    <div key={gIdx} className="space-y-3">
+                                        <h3 className="text-[#c29b61] font-bold text-sm flex items-center gap-2">
+                                            <span className="w-1 h-4 bg-[#c29b61] rounded-full"></span>
+                                            {group.cat}
+                                        </h3>
+                                        <div className="space-y-2">
+                                            {group.list.map((phrase, pIdx) => (
+                                                <div key={pIdx} className="bg-white p-4 rounded-lg shadow-sm border border-stone-100">
+                                                    <div className="flex justify-between items-baseline mb-1">
+                                                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">中文: {phrase.cn}</span>
+                                                    </div>
+                                                    <div className="text-lg font-bold text-slate-800 mb-0.5">{phrase.jp}</div>
+                                                    <div className="text-[10px] text-[#c29b61] font-mono tracking-widest">{phrase.ro}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         ) : (
                             <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
