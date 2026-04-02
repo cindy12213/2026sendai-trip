@@ -3,29 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>仙台 2026 導航 App</title>
+    <title>仙台 2026 導航 App · 完整修復版</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --date-gold: #c29b61;
-            --mori-green: #2d5a27;
-            --zunda-green: #90be6d;
-        }
+        :root { --date-gold: #c29b61; --mori-green: #2d5a27; }
         body { font-family: 'Noto Sans TC', sans-serif; -webkit-tap-highlight-color: transparent; }
         .font-serif-jp { font-family: 'Zen Old Mincho', serif; }
         .day-content { display: none; }
         .day-content.active { display: block; }
+        .tab-btn { color: #d1d5db; border-top: 3px solid transparent; transition: all 0.3s; }
         .tab-btn.active { color: var(--date-gold); border-top: 3px solid var(--date-gold); }
         .safe-area-bottom { padding-bottom: calc(env(safe-area-inset-bottom) + 80px); }
-        
-        .sendai-pattern {
-            position: absolute; top: -20px; right: -20px; opacity: 0.1;
-            transform: rotate(15deg); pointer-events: none;
-        }
+        .sendai-pattern { position: absolute; top: -20px; right: -20px; opacity: 0.1; transform: rotate(15deg); pointer-events: none; }
     </style>
 </head>
 <body class="bg-[#faf9f6] text-slate-800">
@@ -41,60 +34,79 @@
                 {
                     day: "1", date: "5/21 (四)", title: "抵達仙台 · 寶可夢與牛舌", tag: "電車 / 步行", color: "from-[#0f1a2a] to-[#1e293b]",
                     items: [
-                        { time: "16:00", spot: "抵達仙台機場", label: "移動", desc: "搭乘機場快速線直達仙台站 (25分, 660円)。" },
-                        { time: "17:15", spot: "飯店 Check-in (待定)", label: "入住", desc: "建議選擇仙台站周邊飯店，四晚不挪窩以節省體力。" },
-                        { time: "18:00", spot: "寶可夢中心 Sendai", label: "購物", desc: "AER大樓 3F。東北唯一寶可夢直營店。" },
-                        { time: "19:30", spot: "たんや 善治郎", label: "晚餐", desc: "推薦厚切牛舌定食，仙台站前的排隊名店。" }
+                        { time: "16:00", spot: "抵達仙台機場", label: "移動", desc: "搭乘機場快速線直達仙台站 (25分, 660円)。無需轉車。" },
+                        { time: "17:15", spot: "飯店 Check-in (待定)", label: "入住", desc: "建議選擇仙台站周邊。行李入房後「四晚完全不搬動」，是此行的省事核心。" },
+                        { time: "18:00", spot: "寶可夢中心 Sendai", label: "購物", desc: "AER 大樓 3F。東北唯一。適合抵達後輕量逛街。" },
+                        { time: "19:30", spot: "たんや 善治郎", label: "晚餐", desc: "仙台站旁。推薦厚切炭燒牛舌定食，麥飯與山藥泥是靈魂組合。" }
                     ]
                 },
                 {
                     day: "2", date: "5/22 (五)", title: "山形新綠 · 石階修行", tag: "自駕 Day 1", color: "from-[#2d5a27] to-[#4a6741]",
                     items: [
-                        { time: "09:00", spot: "仙台站取車", label: "租車", desc: "帶齊日譯本、正本與護照。避開尖峰出發。" },
-                        { time: "10:15", spot: "山寺 (立石寺)", label: "文化", desc: "挑戰 1015 階修行。五大堂俯瞰山谷絕景。" },
-                        { time: "14:30", spot: "天童產直市場", label: "採買", desc: "5 月限定 🍒 佐藤錦櫻桃 & 紅肉哈密瓜。" },
-                        { time: "16:00", spot: "天童溫泉", label: "溫泉", desc: "視體力決定，日歸溫泉放鬆登山後的疲勞。", optional: true }
-                    ]
+                        { time: "08:30", spot: "晨間能量補給", label: "早餐", desc: "自駕行程前，建議於車站內購買「米（maimai）」飯糰或飯店早餐。" },
+                        { time: "09:00", spot: "仙台站取車", label: "租車", desc: "攜帶日譯本、正本與護照。精神充足，避開晨間通勤尖峰。" },
+                        { time: "10:15", spot: "山寺 (立石寺)", label: "文化", desc: "挑戰 1,015 段石階。在五大堂俯瞰山谷絕景。建議停留 2.5 小時，穿運動鞋。", highlight: true },
+                        { time: "13:00", spot: "山寺站前 · 板蕎麥麵", label: "午餐", desc: "山形手打二八蕎麥，清淡素雅。推薦「川竹」或「大善坊」。" },
+                        { time: "14:30", spot: "天童/寒河江產直市場", label: "採買", desc: "採買「山形佐藤錦櫻桃」（5 月限定）與紅肉哈密瓜。產地直送價格親民。" },
+                        { time: "16:00", spot: "天童溫泉 (選配)", label: "溫泉", desc: "洗去登山疲勞（日歸泡湯約 1-1.5 小時）。肌肉放鬆後開車回程更安全。", optional: true }
+                    ],
+                    specialTip: "💡 彈性提示：若 Day 3 御釜預報晴朗，可與今日行程對調，確保大景優先。"
                 },
                 {
                     day: "3", date: "5/23 (六)", title: "藏王絕景 · 市區國寶巡禮", tag: "自駕 Day 2", color: "from-[#1e3a5f] to-[#334155]",
                     items: [
-                        { time: "09:40", spot: "藏王御釜", label: "絕景", desc: "翡翠色火山口湖。注意山頂強風與溫差。" },
-                        { time: "13:30", spot: "秋保溫泉", label: "溫泉", desc: "可安排日歸溫泉或足湯，放鬆駕駛疲勞。", optional: true },
-                        { time: "15:00", spot: "瑞鳳殿", label: "歷史", desc: "伊達政宗靈屋。華麗的金箔與杉木林建築。" },
-                        { time: "16:15", spot: "大崎八幡宮", label: "國寶", desc: "17:00 關門。欣賞桃山建築傑作，黑漆金箔壯麗。", highlight: true },
-                        { time: "20:30", spot: "仙台站還車", label: "還車", desc: "準時歸還。完成兩日駕駛任務。" }
-                    ]
+                        { 
+                            time: "08:15", 
+                            spot: "仙台早起出發", 
+                            label: "出發", 
+                            desc: "御釜距仙台較遠。出發前務必查詢山頂直播 (Live Camera) 確認能見度。",
+                            liveCam: "https://www2.thr.mlit.go.jp/shinjyou/zaou_live/video/okama-video.html#",
+                            noMap: true
+                        },
+                        { time: "09:40", spot: "藏王御釜", label: "絕景", desc: "10:00 前卡位捕捉最清澈翡翠色「魔女之瞳」。山頂氣溫低 (5-15°C)，需備外套。", highlight: true },
+                        { time: "13:30", spot: "秋保溫泉 (選配)", label: "溫泉", desc: "可於主婦之店 Akiu 購買「秋保御萩」，或進行足湯小憩。", optional: true },
+                        { time: "15:00", spot: "瑞鳳殿", label: "歷史", desc: "伊達政宗靈屋。杉木參道清幽，建築金彩奪目。建議參訪 45-60 分鐘。" },
+                        { time: "16:15", spot: "大崎八幡宮", label: "國寶", desc: "17:00 閉門！欣賞桃山建築傑作，黑漆金箔壯麗。此處與瑞鳳殿皆可利用今日自駕之便完成。", highlight: true },
+                        { time: "20:30", spot: "仙台站還車", label: "還車", desc: "駕駛任務完結。隔日進入電車/步行模式。" }
+                    ],
+                    specialTip: "⚠️ 藏王警示：蔵王エコーライン通常 5/15 前後開放。若遇封閉，請將行程與 Day 2 互換。"
                 },
                 {
                     day: "4", date: "5/24 (日)", title: "松島海岸 · 日本三景", tag: "JR 仙石線", color: "from-[#0d9488] to-[#0f766e]",
                     items: [
-                        { time: "10:30", spot: "松島灣觀光船", label: "遊船", desc: "海上巡禮奇岩怪石。吹海風享受廣闊視野。" },
-                        { time: "12:00", spot: "さんとり茶屋", label: "美食", desc: "松島名物牡蠣定食。望海用餐最享受。" },
-                        { time: "14:00", spot: "瑞巖寺 / 圓通院", label: "文化", desc: "國寶寺院與絕美枯山水。感受 5 月新綠。" }
+                        { time: "09:30", spot: "JR 仙台站 ➔ 松島海岸", label: "移動", desc: "搭乘 JR 仙石線。約 50 分鐘直達，假日搭電車可避開塞車。" },
+                        { time: "10:30", spot: "松島灣觀光船", label: "遊船", desc: "50 分鐘海上巡禮。欣賞仁王島、鐘島等奇岩。三人不言而喻的默契時刻。", highlight: true },
+                        { time: "11:30", spot: "パンセ (Pensee) 松島店", label: "必吃", desc: "松島名物！一定要嘗試現炸的「牡蠣咖哩麵包」，內含整顆肥美牡蠣。" },
+                        { time: "11:50", spot: "五大堂 · 結緣橋", label: "地標", desc: "松島地標。透過橋底木縫看海水，別有趣味。" },
+                        { time: "12:15", spot: "さんとり茶屋", label: "午餐", desc: "松島高評價首選！推薦「松島穴子丼」或「牡蠣定食」。可眺望海景，建議提早卡位。", highlight: true },
+                        { time: "14:00", spot: "瑞巖寺", label: "國寶", desc: "伊達政宗所建。杉木參道氣勢磅礡，金箔壁畫與內部建築極具看點。建議預留 1 小時。", highlight: true },
+                        { time: "15:15", spot: "圓通院", label: "禪意", desc: "16:30 閉館。精緻枯山水與新綠，是松島最具詩意的庭園。", highlight: true },
+                        { time: "17:00", spot: "伴手禮採買 (S-PAL)", label: "購物", desc: "補齊「毛豆泥麻糬」與「萩の月」。站內 S-PAL 買最方便。" }
                     ]
                 },
                 {
                     day: "5", date: "5/25 (一)", title: "榴岡天滿宮 · 朝市返程", tag: "步行 / 巴士", color: "from-[#a21f3c] to-[#be123c]",
                     items: [
-                        { time: "10:00", spot: "榴岡天滿宮", label: "神社", desc: "歷史悠久的神社，環境清幽雅緻。" },
-                        { time: "12:00", spot: "仙台朝市", label: "市集", desc: "最後的海鮮定食，補齊毛豆泥伴手禮。" },
-                        { time: "14:30", spot: "返程仙台機場", label: "機票", desc: "星宇 JX863 17:20 起飛。提前 12:00 集合緩衝。" }
+                        { time: "08:30", spot: "仙台朝市 (早場)", label: "早餐", desc: "最後機會！去朝市吃一碗海鮮丼 (500-1000円)，體驗在地活力。" },
+                        { time: "10:00", spot: "榴岡天滿宮", label: "神社", desc: "歷史悠久的神社，環境清幽雅緻。位於仙台站東側。" },
+                        { time: "12:00", spot: "仙台朝市 (集合)", label: "美食", desc: "享用海鮮定食。最後補齊毛豆泥甜點與櫻桃、哈密瓜。提前集合預留機場緩衝。" },
+                        { time: "14:30", spot: "領行李 ➔ 機場", label: "返程", desc: "JX863 17:20 起飛。搭乘快速線約 14:55 抵達機場，從容辦理登機。" }
                     ]
                 }
             ];
 
             const navItems = [
-                { id: 0, label: "D1", icon: "🕒" },
-                { id: 1, label: "D2", icon: "🚗" },
-                { id: 2, label: "D3", icon: "🗻" },
-                { id: 3, label: "D4", icon: "⛵" },
-                { id: 4, label: "D5", icon: "🛫" },
-                { id: 'info', label: "資訊", icon: "ℹ️" }
+                { id: 0, label: "D1", icon: "🕒" }, { id: 1, label: "D2", icon: "🚗" },
+                { id: 2, label: "D3", icon: "🗻" }, { id: 3, label: "D4", icon: "⛵" },
+                { id: 4, label: "D5", icon: "🛫" }, { id: 'info', label: "資訊", icon: "ℹ️" }
             ];
 
             const openMap = (spot) => {
                 window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spot + ' 仙台')}`, '_blank');
+            };
+
+            const openLink = (url) => {
+                window.open(url, '_blank');
             };
 
             return (
@@ -112,48 +124,63 @@
                             <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-300">
                                 <div className="bg-rose-50 border-l-4 border-rose-400 p-4 rounded-r-lg shadow-sm">
                                     <h3 className="text-rose-800 font-bold text-sm mb-1">⚠️ 自駕文件必備</h3>
-                                    <ul className="text-xs text-rose-700 space-y-1">
-                                        <li>• 台灣駕照正本 / 日文譯本 / 護照</li>
-                                    </ul>
+                                    <p className="text-xs text-rose-700 leading-relaxed">• 台灣駕照正本 / 日文譯本 / 護照<br/>(非國際駕照，請務必攜帶譯本)</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                                    <h3 className="font-serif-jp font-bold text-lg mb-3 flex items-center gap-2 text-slate-700">預算概估</h3>
+                                    <h3 className="font-serif-jp font-bold text-lg mb-3 text-slate-700">☀️ 早餐必吃清單</h3>
+                                    <div className="space-y-3">
+                                        <div className="p-3 bg-stone-50 rounded">
+                                            <p className="text-xs font-bold text-[#c29b61]">仙台朝市海鮮丼</p>
+                                            <p className="text-[10px] text-slate-500 mt-1">500-1000円即可享用新鮮漁獲。8:00 開始 (週日公休)。</p>
+                                        </div>
+                                        <div className="p-3 bg-stone-50 rounded">
+                                            <p className="text-xs font-bold text-[#c29b61]">パンセ (Pensee) 咖哩麵包</p>
+                                            <p className="text-[10px] text-slate-500 mt-1">松島名物牡蠣咖哩麵包，內含整顆肥美牡蠣。</p>
+                                        </div>
+                                        <div className="p-3 bg-stone-50 rounded">
+                                            <p className="text-xs font-bold text-[#c29b61]">車站飯糰 米（maimai）</p>
+                                            <p className="text-[10px] text-slate-500 mt-1">使用宮城縣產大米製作，7:30 開始。適合出發前外帶。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
+                                    <h3 className="font-serif-jp font-bold text-lg mb-3 text-slate-700">預算概估</h3>
                                     <div className="flex justify-between text-sm py-2 border-b border-stone-50"><span>餐飲/購物</span><span className="font-bold">72,000円</span></div>
                                     <div className="flex justify-between text-sm py-2 border-b border-stone-50"><span>交通/門票</span><span class="font-bold">18,000円</span></div>
                                     <div className="flex justify-between text-sm pt-2 text-[#c29b61] font-bold"><span>每人合計約</span><span>90,000円</span></div>
                                 </div>
                                 <div className="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                                    <h3 className="font-serif-jp font-bold text-lg mb-2 text-slate-700">住宿資訊</h3>
-                                    <p className="text-sm font-bold text-[#c29b61]">待定 (Pending)</p>
-                                    <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                                        尚未選定飯店。基於行程動線，強烈建議選擇<strong>「仙台站」西口或東口</strong>步行 5 分鐘內之飯店，以利自駕取車及往返各景點。
-                                    </p>
-                                </div>
-                                <div className="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                                    <h3 className="font-serif-jp font-bold text-lg mb-3 text-slate-700">🧳 行前清單</h3>
-                                    <ul className="text-sm text-slate-600 space-y-1">
-                                        <li>✅ 台灣駕照正本 / 日譯本</li>
-                                        <li>✅ 護照正本</li>
-                                        <li>✅ 舒適運動鞋 (山寺) / 防風外套 (御釜)</li>
+                                    <h3 className="font-serif-jp font-bold text-lg mb-3 text-slate-700">行前清單</h3>
+                                    <ul className="text-sm text-slate-600 space-y-2">
+                                        <li>✅ 舒適運動鞋 (山寺專用)</li>
+                                        <li>✅ 防風/保暖外套 (御釜 10度以下)</li>
+                                        <li>✅ 查詢「蔵王山頂直播」確認能見度</li>
                                     </ul>
                                 </div>
                             </div>
                         ) : (
                             <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
+                                {activeTab === 2 && (
+                                    <div className="mb-4 bg-amber-50 border-2 border-amber-200 p-3 rounded-lg flex items-start gap-2 shadow-sm border-dashed">
+                                        <span className="text-xl">⚠️</span>
+                                        <p className="text-[11px] text-amber-900 leading-tight font-medium">
+                                            <strong>藏王御釜天氣提示：</strong><br/>
+                                            目前山頂氣溫 5-15°C。若直播能見度差或道路封閉，今日與 Day 2 彈性對調。
+                                        </p>
+                                    </div>
+                                )}
+
                                 <div className={`mb-6 p-7 rounded-lg text-white shadow-xl bg-gradient-to-br ${itinerary[activeTab].color} relative overflow-hidden`}>
                                     <svg className="sendai-pattern" width="120" height="120" viewBox="0 0 100 100" fill="none">
                                         <path d="M10 50C10 72.0914 27.9086 90 50 90C72.0914 90 90 72.0914 90 50C90 40 85 30 78 22C85 30 88 40 88 50C88 70.9868 70.9868 88 50 88C29.0132 88 12 70.9868 12 50C12 40 15 30 22 22C15 30 10 40 10 50Z" fill="white" />
                                     </svg>
-                                    
                                     <div className="relative z-10">
                                         <div className="flex justify-between items-start mb-2">
                                             <span className="bg-white/10 px-3 py-1 rounded-sm text-[10px] font-bold tracking-tighter border border-white/20 uppercase">Day {itinerary[activeTab].day}</span>
                                             <span className="text-[9px] font-bold uppercase tracking-widest bg-black/20 px-2 py-1 rounded-sm">{itinerary[activeTab].tag}</span>
                                         </div>
                                         <h2 className="text-2xl font-serif-jp font-black mb-1">{itinerary[activeTab].title}</h2>
-                                        <div className="flex items-center gap-2 text-xs opacity-80 font-medium">
-                                            <span>📅 {itinerary[activeTab].date}</span>
-                                        </div>
+                                        <p className="text-xs opacity-80 font-medium">📅 {itinerary[activeTab].date}</p>
                                     </div>
                                 </div>
 
@@ -171,18 +198,34 @@
                                                     </span>
                                                 </div>
                                                 <p className="text-xs text-slate-500 leading-relaxed font-light">{item.desc}</p>
-                                                <div className="mt-4">
-                                                    <button 
-                                                        onClick={() => openMap(item.spot)}
-                                                        className="w-full py-2 bg-stone-50 border border-stone-100 text-slate-600 rounded-sm text-[9px] font-bold flex items-center justify-center gap-1 active:bg-stone-100 transition-colors uppercase tracking-widest"
-                                                    >
-                                                        📍 Open Navigation
-                                                    </button>
+                                                
+                                                <div className="mt-4 flex flex-col gap-2">
+                                                    {item.liveCam && (
+                                                        <button 
+                                                            onClick={() => openLink(item.liveCam)}
+                                                            className="w-full py-2 bg-amber-50 border border-amber-200 text-amber-700 rounded-sm text-[9px] font-bold active:bg-amber-100 uppercase tracking-widest flex items-center justify-center gap-1"
+                                                        >
+                                                            📷 查看山頂直播
+                                                        </button>
+                                                    )}
+                                                    { !item.noMap && (
+                                                        <button 
+                                                            onClick={() => openMap(item.spot)}
+                                                            className="w-full py-2 bg-stone-50 border border-stone-100 text-slate-600 rounded-sm text-[9px] font-bold active:bg-stone-100 uppercase tracking-widest"
+                                                        >
+                                                            📍 Open Navigation
+                                                        </button>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
+                                {itinerary[activeTab].specialTip && (
+                                    <div className="mt-6 p-4 bg-stone-100 rounded text-[10px] text-stone-500 leading-relaxed border border-stone-200 italic">
+                                        {itinerary[activeTab].specialTip}
+                                    </div>
+                                )}
                             </div>
                         )}
                     </main>
@@ -191,11 +234,8 @@
                         {navItems.map((nav) => (
                             <button 
                                 key={nav.id}
-                                onClick={() => {
-                                    setActiveTab(nav.id);
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }}
-                                className={`flex flex-col items-center transition-all ${activeTab === nav.id ? 'text-[#c29b61] scale-110' : 'text-stone-300'}`}
+                                onClick={() => { setActiveTab(nav.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                                className={`flex flex-col items-center transition-all ${activeTab === nav.id ? 'text-[#c29b61] active' : 'text-stone-300 grayscale'}`}
                             >
                                 <span className="text-xl mb-1">{nav.icon}</span>
                                 <span className="text-[9px] font-bold tracking-tighter uppercase">{nav.label}</span>
