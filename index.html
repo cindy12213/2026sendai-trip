@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>仙台 2026 導航 App · 完整修復版</title>
+    <title>仙台 2026 導航 App · 語音加強版</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -45,9 +45,9 @@
                     items: [
                         { time: "08:30", spot: "晨間能量補給", label: "早餐", desc: "自駕行程前，建議於車站內購買「米（maimai）」飯糰或飯店早餐。" },
                         { time: "09:00", spot: "仙台站取車", label: "租車", desc: "攜帶日譯本、正本與護照。精神充足，避開晨間通勤尖峰。" },
-                        { time: "10:15", spot: "山寺 (立石寺)", label: "文化", desc: "挑戰 1,015 段石階。在五大堂俯瞰山谷絕景。建議停留 2.5 小時，穿運動鞋。", highlight: true },
-                        { time: "13:00", spot: "山寺站前 · 板蕎麥麵", label: "午餐", desc: "山形手打二八蕎麥，清淡素雅。推薦「川竹」或「大善坊」。" },
-                        { time: "14:30", spot: "天童/寒河江產直市場", label: "採買", desc: "採買「山形佐藤錦櫻桃」（5 月限定）與紅肉哈密瓜。產地直送價格親民。" },
+                        { time: "10:15", spot: "山寺 (立石寺)", label: "文化", desc: "挑戰 1,015 段石階。在五大堂俯瞰山谷絕景。建議停留 2.5 小時，請穿運動鞋。", highlight: true },
+                        { time: "13:00", spot: "山寺站前 · 板蕎麥麵", label: "午餐", desc: "山形手打二八蕎麥。推薦 川竹 或 大善坊。" },
+                        { time: "14:30", spot: "天童/寒河江產直市場", label: "採買", desc: "採買「山形佐藤錦櫻桃」（5 月限定）與紅肉哈密瓜。產地直送最便宜。", highlight: true },
                         { time: "16:00", spot: "天童溫泉 (選配)", label: "溫泉", desc: "洗去登山疲勞（日歸泡湯約 1-1.5 小時）。肌肉放鬆後開車回程更安全。", optional: true }
                     ],
                     specialTip: "💡 彈性提示：若 Day 3 御釜預報晴朗，可與今日行程對調，確保大景優先。"
@@ -103,29 +103,42 @@
             ];
 
             const jpPhrases = [
-                { cat: "基本招呼", list: [
+                { cat: "常用招呼與應答", list: [
                     { cn: "你好", jp: "こんにちは", ro: "Konnichiwa" },
                     { cn: "謝謝", jp: "ありがとうございます", ro: "Arigatou gozaimasu" },
-                    { cn: "對不起 / 請問", jp: "すみません", ro: "Sumimasen" },
-                    { cn: "不好意思 (輕微)", jp: "失礼します", ro: "Shitsurei shimasu" }
+                    { cn: "對不起 / 請問 (超好用)", jp: "すみません", ro: "Sumimasen" },
+                    { cn: "沒關係 / 沒問題", jp: "大丈夫です", ro: "Daijoubu desu" },
+                    { cn: "是的", jp: "はい", ro: "Hai" },
+                    { cn: "不是", jp: "いいえ", ro: "Iie" }
                 ]},
-                { cat: "餐廳 / 購物", list: [
+                { cat: "餐廳進階用語", list: [
+                    { cn: "三個人", jp: "三人です", ro: "Sannin desu" },
+                    { cn: "有預約", jp: "予約しています", ro: "Yoyaku shite imasu" },
+                    { cn: "我不吃哇沙比", jp: "わさび抜きでお願いします", ro: "Wasabi nuki de onegaishimasu" },
+                    { cn: "請給我生啤酒", jp: "生ビールをください", ro: "Nama biru wo kudasai" },
+                    { cn: "超好吃！", jp: "すごく美味しいです！", ro: "Sugoku oishii desu!" },
+                    { cn: "請給我冰水", jp: "お冷をください", ro: "Ohiya wo kudasai" },
+                    { cn: "結帳", jp: "お会計をお願いします", ro: "Okaikei wo onegaishimasu" }
+                ]},
+                { cat: "購物與退稅", list: [
+                    { cn: "多少錢？", jp: "いくらですか？", ro: "Ikura desu ka?" },
+                    { cn: "可以試穿嗎？", jp: "試着できますか？", ro: "Shichaku dekimasu ka?" },
+                    { cn: "可以免稅嗎？", jp: "免税できますか？", ro: "Menzei dekimasu ka?" },
                     { cn: "請給我這個", jp: "これをください", ro: "Kore wo kudasai" },
-                    { cn: "請問多少錢？", jp: "いくらですか？", ro: "Ikura desu ka?" },
-                    { cn: "請結帳", jp: "お会計をお願いします", ro: "Okaikei wo onegaishimasu" },
-                    { cn: "有英文菜單嗎？", jp: "英語のメニューはありますか？", ro: "Eigo no menyu wa arimasu ka?" },
-                    { cn: "推薦的是什麼？", jp: "おすすめは何ですか？", ro: "Osusume wa nan desu ka?" }
+                    { cn: "我要用信用卡結帳", jp: "クレジットカードでお願いします", ro: "Kurejitto kaado de onegaishimasu" }
                 ]},
-                { cat: "問路 / 交通", list: [
-                    { cn: "廁所在哪裡？", jp: "トイレはどこですか？", ro: "Toire wa doko desu ka?" },
-                    { cn: "請問這裡是哪裡？", jp: "ここはどこですか？", ro: "Koko wa doko desu ka?" },
-                    { cn: "我想去 (地點)", jp: "(地點) へ行きたいです", ro: "(Place) e ikitai desu" },
-                    { cn: "會說英文嗎？", jp: "英語が話せますか？", ro: "Eigo ga hanasemasu ka?" }
+                { cat: "交通與飯店", list: [
+                    { cn: "我要 check in", jp: "チェックインをお願いします", ro: "Chekku-in wo onegaishimasu" },
+                    { cn: "廁所在哪？", jp: "トイレはどこですか？", ro: "Toire wa doko desu ka?" },
+                    { cn: "這班車會到仙台嗎？", jp: "これは仙台へ行きますか？", ro: "Kore wa Sendai e ikimasu ka?" },
+                    { cn: "請帶我到這裡 (給司機看)", jp: "這裡へ行ってください", ro: "Koko e itte kudasai" },
+                    { cn: "可以寄放行李嗎？", jp: "荷物を預かってもらえますか？", ro: "Nimotsu wo azukatte morae masu ka?" }
                 ]},
-                { cat: "緊急 / 需求", list: [
-                    { cn: "請救救我 / 幫幫我", jp: "助けてください", ro: "Tasukete kudasai" },
+                { cat: "緊急與求助", list: [
+                    { cn: "請救救我", jp: "助けてください", ro: "Tasukete kudasai" },
+                    { cn: "我搞丟東西了", jp: "失くし物をしました", ro: "Nakushimono wo shimashita" },
                     { cn: "我不舒服", jp: "気分が悪いです", ro: "Kibun ga warui desu" },
-                    { cn: "可以拍照嗎？", jp: "写真を撮ってもいいですか？", ro: "Shashin wo tottemo ii desu ka?" }
+                    { cn: "會說中文的人在嗎？", jp: "中国語が話せる人はいますか？", ro: "Chuugokugo ga hanaseru hito wa imasu ka?" }
                 ]}
             ];
 
@@ -135,6 +148,16 @@
 
             const openLink = (url) => {
                 window.open(url, '_blank');
+            };
+
+            const speak = (text) => {
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.lang = 'ja-JP';
+                    utterance.rate = 0.85;
+                    window.speechSynthesis.speak(utterance);
+                }
             };
 
             return (
@@ -189,8 +212,8 @@
                         ) : activeTab === 'jp' ? (
                             <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
                                 <div className="mb-4">
-                                    <h2 className="text-2xl font-serif-jp font-black text-slate-800">日本旅遊必備日語</h2>
-                                    <p className="text-xs text-slate-400 mt-1 tracking-wider uppercase">Essential Japanese Phrases</p>
+                                    <h2 className="text-2xl font-serif-jp font-black text-slate-800">旅遊必備日語</h2>
+                                    <p className="text-xs text-slate-400 mt-1 tracking-wider uppercase">Tap the Icon to Listen</p>
                                 </div>
                                 {jpPhrases.map((group, gIdx) => (
                                     <div key={gIdx} className="space-y-3">
@@ -200,12 +223,20 @@
                                         </h3>
                                         <div className="space-y-2">
                                             {group.list.map((phrase, pIdx) => (
-                                                <div key={pIdx} className="bg-white p-4 rounded-lg shadow-sm border border-stone-100">
-                                                    <div className="flex justify-between items-baseline mb-1">
-                                                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">中文: {phrase.cn}</span>
+                                                <div key={pIdx} className="bg-white p-4 rounded-lg shadow-sm border border-stone-100 flex justify-between items-center group active:bg-stone-50 transition-colors">
+                                                    <div className="flex-1 pr-4">
+                                                        <div className="flex justify-between items-baseline mb-1">
+                                                            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">中文: {phrase.cn}</span>
+                                                        </div>
+                                                        <div className="text-lg font-bold text-slate-800 mb-0.5 leading-tight">{phrase.jp}</div>
+                                                        <div className="text-[10px] text-[#c29b61] font-mono tracking-widest">{phrase.ro}</div>
                                                     </div>
-                                                    <div className="text-lg font-bold text-slate-800 mb-0.5">{phrase.jp}</div>
-                                                    <div className="text-[10px] text-[#c29b61] font-mono tracking-widest">{phrase.ro}</div>
+                                                    <button 
+                                                        onClick={() => speak(phrase.jp)}
+                                                        className="p-3 bg-stone-50 rounded-full text-[#c29b61] hover:bg-[#c29b61] hover:text-white transition-all shadow-sm shrink-0"
+                                                    >
+                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                                    </button>
                                                 </div>
                                             ))}
                                         </div>
