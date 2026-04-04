@@ -29,89 +29,23 @@
         const Icon = ({ name, size = 18, className = "" }) => {
             const icons = {
                 Train: <path d="M7 15h10M15 22l-1-4H10l-1 4M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v7c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2zM12 8V4" />,
-                Car: (
-                    <>
-                        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
-                        <circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>
-                    </>
-                ),
-                Camera: (
-                    <>
-                        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
-                        <circle cx="12" cy="13" r="3"/>
-                    </>
-                ),
+                Car: (<><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></>),
+                Camera: (<><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></>),
                 Navigation: <polygon points="3 11 22 2 13 21 11 13 3 11" />,
-                CheckCircle2: (
-                    <>
-                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                        <path d="m9 12 2 2 4-4"/>
-                    </>
-                ),
-                Home: (
-                    <>
-                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                        <polyline points="9 22 9 12 15 12 15 22"/>
-                    </>
-                ),
-                ClipboardCheck: (
-                    <>
-                        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
-                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>
-                    </>
-                ),
-                AlertTriangle: (
-                    <>
-                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
-                        <line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/>
-                    </>
-                ),
-                Wallet: (
-                    <>
-                        <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>
-                    </>
-                ),
+                CheckCircle2: (<><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></>),
+                Home: (<><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></>),
+                ClipboardCheck: (<><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></>),
+                AlertTriangle: (<><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></>),
+                Wallet: (<><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></>),
                 Shirt: <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>,
-                Utensils: (
-                    <>
-                        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
-                    </>
-                ),
-                Volume2: (
-                    <>
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </>
-                ),
-                Info: (
-                    <>
-                        <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/>
-                    </>
-                ),
-                Calendar: (
-                    <>
-                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-                        <line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>
-                    </>
-                ),
-                Languages: (
-                    <>
-                        <path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>
-                    </>
-                )
+                Utensils: (<><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></>),
+                Volume2: (<><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></>),
+                Info: (<><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></>),
+                Calendar: (<><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></>),
+                Languages: (<><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></>)
             };
             return (
-                <svg
-                    width={size}
-                    height={size}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={className}
-                >
+                <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
                     {icons[name]}
                 </svg>
             );
@@ -124,25 +58,31 @@
                 {
                     day: "01", date: "5/21 (四)", title: "抵達仙台 · 寶可夢與牛舌", tag: "移動日", color: "from-[#0f1a2a] to-[#1e293b]", icon: "Train",
                     items: [
-                        { time: "16:00", spot: "抵達仙台機場", label: "移動", desc: "搭乘機場快速線直達仙台站 (25分, 660円)。無需轉車。" },
+                        { time: "16:00", spot: "抵達仙台機場", label: "移動", desc: "搭乘機場快速線直達仙台站 (25分, 660円)。" },
                         { time: "17:15", spot: "仙台相鐵 FRESA INN", label: "入住", desc: "仙台站西口步行約 5-7 分鐘。Check-in 並放置行李。" },
                         { time: "18:00", spot: "寶可夢中心 Sendai", label: "購物", desc: "AER 大樓 3F。東北唯一寶可夢直營店。" },
-                        { time: "19:30", spot: "たんや 善治郎", label: "晚餐", desc: "推薦厚切牛舌定食，麥飯與山藥泥的完美組合。" }
+                        { time: "19:30", spot: "善治郎、司 或 閣", label: "晚餐", desc: "推薦 閣 (ブランドーム本店)、善治郎或司。閣的獨門切割技術極受好評。", highlight: true }
                     ]
                 },
                 {
-                    day: "02", date: "5/22 (五)", title: "山形新綠 · 石階修行", tag: "自駕 D1", color: "from-[#2d5a27] to-[#4a6741]", icon: "Car",
+                    day: "02", date: "5/22 (五)", title: "山形秘境 · 裏山寺特訓", tag: "自駕 D1", color: "from-[#2d5a27] to-[#4a6741]", icon: "Car",
                     items: [
-                        { time: "08:30", spot: "晨間能量補給", label: "早餐", desc: "由於飯店不含早，建議於車站購買「米（maimai）」飯糰。" },
-                        { time: "09:00", spot: "仙台站取車", label: "租車", desc: "攜帶日譯本、正本與護照。從飯店步行至租車點。" },
-                        { time: "10:15", spot: "山寺 (立石寺)", label: "文化", desc: "挑戰 1,015 段石階。在五大堂俯瞰山谷絕景。穿運動鞋。", highlight: true },
-                        { time: "13:00", spot: "山寺站前 · 板蕎麥麵", label: "午餐", desc: "山形手打二八蕎麥，推薦「川竹」或「大善坊」。" },
-                        { time: "14:30", spot: "天童產直市場", label: "採買", desc: "採買「山形佐藤錦櫻桃」（5 月限定）與紅肉哈密瓜。" },
-                        { time: "16:00", spot: "天童溫泉 (選配)", label: "溫泉", desc: "日歸溫泉放鬆登山後的疲勞。", optional: true },
-                        { time: "18:00", spot: "啟程返回仙台", label: "返回", desc: "約 19:30 抵達市區。結束自駕第一日。" },
-                        { time: "20:00", spot: "仙台一番町 · 晚餐", label: "晚餐", desc: "一番町商店街美食巡禮，享用道地東北料理。" }
+                        { time: "08:30", spot: "晨間能量補給", label: "早餐", desc: "飯店不含早，推薦於車站購買「米（maimai）」飯糰。" },
+                        { time: "09:00", spot: "仙台站取租車", label: "租車", desc: "攜帶日譯本、正本與護照。開車前往山形。" },
+                        { time: "10:15", spot: "垂水遺跡 (裏山寺)", label: "秘境", desc: "巨大的蜂巢岩壁與古老靈場。步道較原始，約需 1 小時。", highlight: true },
+                        { time: "11:30", spot: "山寺 (立石寺)", label: "文化", desc: "挑戰 1,015 段石階。在五大堂俯瞰山谷。務必穿運動鞋。", highlight: true },
+                        { 
+                            time: "13:30", spot: "焰藏 或 對面石", label: "午餐", 
+                            desc: "山形板蕎麥麵名店。焰藏較精緻，對面石可看河景。", 
+                            highlight: true,
+                            customMap: "https://share.google/sXWR9EcMFdO5pb9Al" 
+                        },
+                        { time: "15:00", spot: "天童產直市場", label: "採買", desc: "採買「山形佐藤錦櫻桃」（5 月限定）與紅肉哈密瓜。" },
+                        { time: "16:30", spot: "天童溫泉 (選配)", label: "溫泉", desc: "日歸溫泉放鬆疲勞。肌肉放鬆後開車回程更安全。", optional: true },
+                        { time: "18:30", spot: "啟程返回仙台", label: "返回", desc: "行經作並街道返回市區。中途不經過山形車站。" },
+                        { time: "20:30", spot: "仙台市區晚餐", label: "晚餐", desc: "一番町商店街美食，或回房享用今日採買的水果。" }
                     ],
-                    specialTip: "💡 彈性提示：若 Day 3 御釜預報晴朗，可與今日行程對調，確保大景優先。"
+                    specialTip: "💡 提醒：今日運動量極大，請確保水分補給。"
                 },
                 {
                     day: "03", date: "5/23 (六)", title: "藏王絕景 · 市區國寶巡禮", tag: "自駕 D2", color: "from-[#1e3a5f] to-[#334155]", icon: "Camera",
@@ -156,21 +96,32 @@
                         { time: "09:40", spot: "藏王御釜", label: "絕景", desc: "捕捉最清澈翡翠色「魔女之瞳」。需備外套。", highlight: true },
                         { time: "13:30", spot: "秋保溫泉 (選配)", label: "溫泉", desc: "可安排足湯或購買秋保御萩。", optional: true },
                         { time: "15:00", spot: "瑞鳳殿", label: "歷史", desc: "伊達政宗靈屋。華麗建築。建議參訪 45-60 分鐘。" },
-                        { time: "16:15", spot: "大崎八幡宮", label: "國寶", desc: "17:00 閉門！欣賞黑漆金箔建築。今日自駕最順路。", optional: true },
+                        { time: "16:15", spot: "大崎八幡宮 (選配)", label: "國寶", desc: "17:00 閉門！欣賞黑漆金箔傑作。自駕較順路。", optional: true },
+                        { 
+                            time: "19:00", spot: "Botan 炸豬排 (建議)", label: "晚餐", 
+                            desc: "名店「とんかつ ぼたん」。若今晚沒吃到，可挪至 Day 4 晚餐。",
+                            customMap: "https://www.google.com/maps?cid=2890152258178029097&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=zh-TW&gl=TW&source=embed"
+                        },
                         { time: "20:30", spot: "仙台站還車", label: "還車", desc: "駕駛任務完結。步行回飯店休息。" }
                     ],
-                    specialTip: "⚠️ 藏王警示：道路開放情況需於出發前確認。若封閉請與 Day 2 互換。"
+                    specialTip: "⚠️ 藏王警示：道路開放需預查。若封閉請與 Day 2 互換。"
                 },
                 {
                     day: "04", date: "5/24 (日)", title: "松島海岸 · 日本三景", tag: "JR 往返", color: "from-[#0d9488] to-[#0f766e]", icon: "Navigation",
                     items: [
                         { time: "09:30", spot: "JR 前往松島海岸", label: "移動", desc: "搭乘 JR 仙石線。約 50 分鐘直達。" },
-                        { time: "10:30", spot: "松島灣觀光船", label: "遊船", desc: "50 分鐘海上巡禮。欣賞仁王島、鐘島等奇岩。", highlight: true },
+                        { time: "10:30", spot: "松島灣觀光船", label: "遊船", desc: "50 分鐘海上巡禮。欣賞奇岩與三人默契時刻。", highlight: true },
                         { time: "11:30", spot: "Pensee 松島店", label: "必吃", desc: "必吃炸「牡蠣咖哩麵包」，內含整顆肥美牡蠣。" },
-                        { time: "12:15", spot: "さんとり茶屋", label: "午餐", desc: "松島高評價！推薦穴子丼或牡蠣定食。可看海。", highlight: true },
+                        { time: "12:15", spot: "さんとり茶屋", label: "午餐", desc: "松島高評價！推薦穴子丼或牡蠣定食。可眺望海景。", highlight: true },
                         { time: "14:00", spot: "瑞巖寺", label: "國寶", desc: "國寶寺院。杉木參道與內部金箔壁畫極具看點。" },
                         { time: "15:15", spot: "圓通院", label: "禪意", desc: "16:30 閉館。精緻枯山水與新綠，詩意庭園。", highlight: true },
-                        { time: "17:00", spot: "市區採買 (S-PAL)", label: "購物", desc: "補齊「毛豆泥麻糬」與「萩の月」。" }
+                        { 
+                            time: "18:30", spot: "すき焼 割烹 かとう", label: "晚餐", 
+                            desc: "上杉 1 丁目。肉鋪直營的頂級仙台牛壽喜燒。極度推薦。",
+                            highlight: true,
+                            customMap: "https://share.google/T5LpmRrmSO6jUu4Xx"
+                        },
+                        { time: "20:00", spot: "市區採買 (S-PAL)", label: "購物", desc: "補齊「毛豆泥麻糬」與「萩の月」。" }
                     ]
                 },
                 {
@@ -178,40 +129,42 @@
                     items: [
                         { time: "10:00", spot: "榴岡天滿宮", label: "神社", desc: "歷史悠久，環境清幽雅緻。位於仙台站東側。" },
                         { time: "12:00", spot: "仙台朝市 (集合)", label: "美食", desc: "最後海鮮定食。補齊水果與毛豆泥甜點。" },
-                        { time: "14:30", spot: "領行李 ➔ 機場", label: "返程", desc: "JX863 17:20 起飛。預留有機場緩衝。" }
+                        { time: "14:30", spot: "領行李 ➔ 機場", label: "返程", desc: "JX863 17:20 起飛。預留機場緩衝。" }
                     ]
                 }
             ];
 
             const jpPhrases = [
-                { cat: "常用呼喚與基本", list: [
+                { cat: "常用基本", list: [
                     { cn: "你好", jp: "こんにちは", ro: "Konnichiwa" },
-                    { cn: "謝謝", jp: "ありがとうございます", ro: "Arigatou" },
+                    { cn: "謝謝", jp: "ありがとうございます", ro: "Arigatou gozaimasu" },
+                    { cn: "辛苦了 (萬用)", jp: "お疲れ様です", ro: "Otsukaresama desu" },
+                    { cn: "我不會講日文", jp: "日本語は話せません", ro: "Nihongo wa hanasemasen" },
                     { cn: "對不起 / 請問", jp: "すみません", ro: "Sumimasen" },
-                    { cn: "沒關係 / 沒問題", jp: "大丈夫です", ro: "Daijoubu" },
+                    { cn: "沒關係 / 沒問題", jp: "大丈夫です", ro: "Daijoubu desu" },
                     { cn: "是的 / 不是", jp: "はい / いいえ", ro: "Hai / Iie" }
                 ]},
-                { cat: "餐廳進階用語", list: [
+                { cat: "餐廳進階", list: [
                     { cn: "三個人", jp: "三人です", ro: "Sannin desu" },
-                    { cn: "我不吃哇沙比", jp: "わさび抜きでお願いします", ro: "Wasabi nuki" },
-                    { cn: "請給我生啤酒", jp: "生ビールをください", ro: "Nama biru" },
-                    { cn: "超好吃！", jp: "すごく美味しいです！", ro: "Sugoku oishii!" },
-                    { cn: "結帳", jp: "お会計をお願いします", ro: "Okaikei" }
+                    { cn: "我不吃哇沙比", jp: "わさび抜きでお願いします", ro: "Wasabi nuki de" },
+                    { cn: "請給我生啤酒", jp: "生ビールをください", ro: "Nama biru wo kudasai" },
+                    { cn: "超好吃！", jp: "すごく美味しいです！", ro: "Sugoku oishii desu!" },
+                    { cn: "結帳", jp: "お会計をお願いします", ro: "Okaikei wo onegaishimasu" }
                 ]},
                 { cat: "購物與信用卡", list: [
-                    { cn: "我要用信用卡結帳", jp: "クレジットカードでお願いします", ro: "Kurejitto kaado" },
+                    { cn: "我要用信用卡結帳", jp: "クレジットカードでお願いします", ro: "Kurejitto kaado de onegaishimasu" },
                     { cn: "多少錢？", jp: "いくらですか？", ro: "Ikura desu ka?" },
                     { cn: "可以免稅嗎？", jp: "免税できますか？", ro: "Menzei dekimasu ka?" },
                     { cn: "請給我這個", jp: "これをください", ro: "Kore wo kudasai" }
                 ]},
-                { cat: "飯店與交通確認", list: [
-                    { cn: "我要 check in", jp: "チェックインをお願いします", ro: "Chekku-in" },
+                { cat: "飯店與交通", list: [
+                    { cn: "我要 check in", jp: "チェックインをお願いします", ro: "Chekku-in wo onegaishimasu" },
                     { cn: "廁所在哪？", jp: "トイレはどこですか？", ro: "Toire wa doko desu ka?" },
                     { cn: "可以寄放行李嗎？", jp: "荷物を預かってもらえますか？", ro: "Nimotsu azuke" },
-                    { cn: "這班車去仙台嗎？", jp: "これは仙台へ行きますか？", ro: "Kore wa Sendai e ikimasu ka?" },
-                    { cn: "請帶我到這裡", jp: "ここへ行ってください", ro: "Koko e itte kudasai" }
+                    { cn: "這班車去仙台嗎？", jp: "這班車去仙台嗎？", ro: "Kore wa Sendai e ikimasu ka?" },
+                    { cn: "請帶我到這裡", jp: "這裡へ行ってください", ro: "Koko e itte kudasai" }
                 ]},
-                { cat: "緊急與求助", list: [
+                { cat: "緊急求助", list: [
                     { cn: "我不舒服", jp: "気分が悪いです", ro: "Kibun ga warui" },
                     { cn: "請救救我", jp: "助けてください", ro: "Tasukete kudasai" },
                     { cn: "會說中文的人嗎？", jp: "中国語が話せる人はいますか？", ro: "Chuugokugo hito?" }
@@ -228,8 +181,12 @@
                 }
             };
 
-            const openMap = (spot) => {
-                window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spot + ' 仙台')}`, '_blank');
+            const openMap = (spot, customUrl) => {
+                if (customUrl) {
+                    window.open(customUrl, '_blank');
+                } else {
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spot + ' 仙台')}`, '_blank');
+                }
             };
 
             return (
@@ -245,19 +202,18 @@
                     <main className="p-4 max-w-md mx-auto">
                         {activeTab === 'info' ? (
                             <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-300 pb-10">
-                                {/* 1. 住宿詳情 */}
+                                {/* 住宿 */}
                                 <div className="bg-white p-5 rounded-lg border border-stone-200 shadow-sm relative overflow-hidden">
                                     <div className="absolute top-[-10px] right-[-10px] opacity-5"><Icon name="Home" size={80} /></div>
                                     <h3 className="font-bold text-lg mb-3 flex items-center gap-2 text-slate-700 border-b border-stone-50 pb-2">
                                         <Icon name="Home" size={18} className="text-[#c29b61]" /> 住宿：相鐵 FRESA INN
                                     </h3>
-                                    <div className="space-y-2">
-                                        <p className="text-sm font-bold text-slate-800 italic">仙台相鐵 FRESA INN (Sotetsu Fresa Inn Sendai)</p>
-                                        <div className="bg-stone-50 p-3 rounded text-[12px] space-y-1.5 border border-stone-100">
-                                            <div className="flex justify-between"><span>入住日期</span><span className="font-medium text-slate-700">5/21 (四) 15:00~</span></div>
-                                            <div className="flex justify-between"><span>退房日期</span><span className="font-medium text-slate-700">5/25 (一) 11:00</span></div>
-                                            <div className="flex justify-between border-t border-stone-200 pt-1 mt-1"><span>房型</span><span className="font-medium text-[#c29b61]">標準房 x 1 (3人入住)</span></div>
-                                            <div className="flex justify-between"><span>床型配置</span><span>1張雙人床 & 2張加大單人床</span></div>
+                                    <div className="space-y-2 text-[12px]">
+                                        <p className="text-sm font-bold text-slate-800 italic">仙台相鐵 FRESA INN</p>
+                                        <div className="bg-stone-50 p-3 rounded space-y-1.5 border border-stone-100 text-slate-600">
+                                            <div className="flex justify-between"><span>日期</span><span>5/21 ~ 5/25 (4晚)</span></div>
+                                            <div className="flex justify-between"><span>房型</span><span>標準房 x 1 (3人入住)</span></div>
+                                            <div className="flex justify-between"><span>床型</span><span>1 雙人床 & 2 加大單人床</span></div>
                                             <div className="flex justify-between items-center text-rose-600 font-bold border-t border-stone-200 pt-1 mt-1"><span>餐點</span><span>❌ 無早餐</span></div>
                                         </div>
                                     </div>
@@ -266,36 +222,37 @@
                                     </button>
                                 </div>
 
-                                {/* 2. 自駕文件 */}
+                                {/* 自駕文件 */}
                                 <div className="bg-rose-50 border-l-4 border-rose-400 p-5 rounded-r-lg shadow-sm relative overflow-hidden">
                                     <div className="absolute top-0 right-0 p-2 opacity-10"><Icon name="ClipboardCheck" size={50} /></div>
                                     <h3 className="text-rose-800 font-bold text-sm mb-3 flex items-center gap-2"><Icon name="AlertTriangle" size={16} /> 自駕文件</h3>
                                     <ul className="text-[12px] text-rose-700 space-y-2 font-medium"><li>✅ 台灣駕照正本</li><li>✅ 日文譯本 (監理站申請)</li><li>✅ 護照正本</li></ul>
                                 </div>
 
-                                {/* 3. 補給推薦 */}
-                                <div className="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
+                                {/* 補給與美食重點 */}
+                                <div className="bg-white p-5 rounded-lg border border-stone-200 shadow-sm text-slate-600">
                                     <h3 className="font-bold text-lg mb-3 flex items-center gap-2 text-slate-700 border-b border-stone-50 pb-2">
-                                        <Icon name="Utensils" size={18} className="text-[#c29b61]" /> 補給與必吃重點
+                                        <Icon name="Utensils" size={18} className="text-[#c29b61]" /> 補給與美食攻略
                                     </h3>
                                     <div className="space-y-3 mt-3">
                                         <div className="p-3 bg-stone-50 rounded border border-stone-100 text-[11px] leading-relaxed">
-                                            <p className="font-bold text-[#c29b61]">☀️ 仙台朝市 · 海鮮丼</p>
-                                            <p className="text-slate-500">500-1000円。08:00-18:00 (週日公休)。</p>
+                                            <p className="font-bold text-[#c29b61]">🥩 仙台牛舌 · 閣 / 善治郎 / 司</p>
+                                            <p>在地極高評價。閣 (ブランドーム本店) 的調味與厚度是仙台巔峰。</p>
+                                        </div>
+                                        <div className="p-3 bg-[#fdfcf0] rounded border border-[#f0e68c] text-[11px] leading-relaxed">
+                                            <p className="font-bold text-orange-700">🍲 すき焼 割烹 かとう</p>
+                                            <p>老字號仙台牛壽喜燒。Day 4 晚上上杉區重點美食。</p>
+                                            <button onClick={() => openMap("", "https://share.google/T5LpmRrmSO6jUu4Xx")} className="mt-1 text-[9px] text-blue-600 font-bold underline">開啟店家連結</button>
                                         </div>
                                         <div className="p-3 bg-stone-50 rounded border border-stone-100 text-[11px] leading-relaxed">
-                                            <p className="font-bold text-[#c29b61]">🥐 Pensee · 牡蠣咖哩麵包</p>
-                                            <p className="text-slate-500">松島必吃，內含整顆肥美牡蠣。</p>
-                                        </div>
-                                        <div className="p-3 bg-stone-50 rounded border border-stone-100 text-[11px] leading-relaxed">
-                                            <p className="font-bold text-[#c29b61]">🍙 車站飯糰 · 米 (maimai)</p>
-                                            <p className="text-slate-500">07:30 開始。適合自駕出發前快速補給。</p>
+                                            <p className="font-bold text-[#c29b61]">🐷 Botan 炸豬排 (とんかつ ぼたん)</p>
+                                            <p>超人氣白色炸豬排。Day 3 或 Day 4 晚餐重點。</p>
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* 4. 筆記 */}
-                                <div className="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
+                                {/* 預算筆記 */}
+                                <div className="bg-white p-5 rounded-lg border border-stone-200 shadow-sm text-slate-600">
                                     <h3 className="font-bold text-lg mb-3 flex items-center gap-2 text-slate-700 border-b border-stone-50 pb-2">
                                         <Icon name="Wallet" size={18} className="text-[#c29b61]" /> 行前筆記
                                     </h3>
@@ -303,11 +260,12 @@
                                         <div className="space-y-1 text-xs">
                                             <div className="flex justify-between py-1 border-b border-stone-50"><span>餐飲 & 購物 (預估)</span><span className="font-bold">72,000円</span></div>
                                             <div className="flex justify-between py-1 border-b border-stone-50"><span>交通 & 門票 (預估)</span><span className="font-bold">18,000円</span></div>
-                                            <div className="flex justify-between text-sm pt-1 text-[#c29b61] font-black"><span>預估每人合計約</span><span>90,000円</span></div>
+                                            <div className="flex justify-between text-sm pt-1 text-[#c29b61] font-black"><span>預估合計每人約</span><span>90,000円</span></div>
                                         </div>
-                                        <div className="bg-emerald-50/50 p-3 rounded border border-emerald-100 text-[10px] space-y-1 text-emerald-800">
-                                            <p className="font-bold flex items-center gap-1"><Icon name="Shirt" size={14} /> 裝備提醒</p>
-                                            <p>• Day 2 山寺：請穿著穩定運動鞋。 Day 3 御釜：海拔高風大，需備外套。</p>
+                                        <div className="bg-emerald-50/50 p-3 rounded border border-emerald-100 text-[10px] space-y-1 text-emerald-800 leading-relaxed">
+                                            <p className="font-bold flex items-center gap-1"><Icon name="Shirt" size={14} /> 裝備與天氣</p>
+                                            <p>• Day 2 山寺 & 垂水：石階多且步道原始，務必穿穩定運動鞋。</p>
+                                            <p>• Day 3 御釜：海拔高、風強低溫，必備防風保暖外套。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -323,11 +281,11 @@
                                         <h3 className="text-[#c29b61] font-bold text-sm flex items-center gap-2"><span className="w-1 h-4 bg-[#c29b61] rounded-full"></span>{group.cat}</h3>
                                         <div className="space-y-2">
                                             {group.list.map((phrase, pIdx) => (
-                                                <div key={pIdx} className="bg-white p-4 rounded-lg shadow-sm border border-stone-100 flex justify-between items-center active:bg-stone-50">
+                                                <div key={pIdx} className="bg-white p-4 rounded-lg shadow-sm border border-stone-100 flex justify-between items-center active:bg-stone-50 transition-colors">
                                                     <div className="flex-1 pr-4">
-                                                        <div className="text-[10px] text-slate-400 font-bold uppercase mb-1">中文: {phrase.cn}</div>
-                                                        <div className="text-lg font-bold text-slate-800 mb-0.5 leading-tight">{phrase.jp}</div>
-                                                        <div className="text-[10px] text-[#c29b61] font-mono tracking-widest uppercase">{phrase.ro}</div>
+                                                        <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5 tracking-tight">中文: {phrase.cn}</div>
+                                                        <div className="text-[17px] font-bold text-slate-800 leading-tight mb-0.5">{phrase.jp}</div>
+                                                        <div className="text-[11px] text-[#c29b61] font-mono font-medium lowercase italic tracking-wide">{phrase.ro}</div>
                                                     </div>
                                                     <button onClick={() => speak(phrase.jp)} className="p-3 bg-stone-50 rounded-full text-[#c29b61] active:bg-[#c29b61] active:text-white shrink-0 shadow-sm transition-all">
                                                         <Icon name="Volume2" size={20} />
@@ -343,7 +301,7 @@
                                 {activeTab === 2 && (
                                     <div className="mb-4 bg-amber-50 border-2 border-amber-200 p-3 rounded-lg flex items-start gap-2 shadow-sm border-dashed">
                                         <Icon name="AlertTriangle" className="text-amber-600 shrink-0" />
-                                        <p className="text-[11px] text-amber-900 leading-tight font-medium">目前山頂氣溫約 5-15°C。若直播能見度差，建議與 Day 2 行程對調。</p>
+                                        <p className="text-[11px] text-amber-900 leading-tight font-medium">目前山頂氣溫約 5-15°C。若直播能見度差，建議今日與 Day 2 行程對調。</p>
                                     </div>
                                 )}
                                 <div className={`mb-6 p-7 rounded-xl text-white shadow-xl bg-gradient-to-br ${itinerary[activeTab].color} relative overflow-hidden`}>
@@ -362,21 +320,21 @@
                                 </div>
                                 <div className="space-y-4">
                                     {itinerary[activeTab].items.map((item, idx) => (
-                                        <div key={idx} className={`bg-white rounded-lg shadow-sm border border-stone-200 overflow-hidden ${item.highlight ? 'ring-1 ring-[#c29b61]' : ''}`}>
+                                        <div key={idx} className={`rounded-lg shadow-sm border overflow-hidden transition-all duration-300 ${item.optional ? 'bg-stone-50/50 border-dashed border-stone-300 opacity-60' : 'bg-white border-stone-200'} ${item.highlight && !item.optional ? 'ring-1 ring-[#c29b61]' : ''}`}>
                                             <div className="p-4">
                                                 <div className="flex justify-between items-start mb-2">
                                                     <div className="flex items-center gap-3">
-                                                        <span className="text-[#c29b61] font-bold text-sm tracking-tighter">{item.time}</span>
-                                                        <h3 className="font-bold text-slate-800 text-[15px]">{item.spot}</h3>
+                                                        <span className={`${item.optional ? 'text-slate-400' : 'text-[#c29b61]'} font-bold text-sm tracking-tighter`}>{item.time}</span>
+                                                        <h3 className={`${item.optional ? 'text-slate-500' : 'text-slate-800'} font-bold text-[15px]`}>{item.spot}</h3>
                                                     </div>
-                                                    <span className={`text-[9px] px-2 py-0.5 rounded-sm font-bold uppercase ${item.optional ? 'bg-stone-100 text-stone-400' : 'bg-[#c29b61]/10 text-[#c29b61]'}`}>
+                                                    <span className={`text-[9px] px-2 py-0.5 rounded-sm font-bold uppercase ${item.optional ? 'bg-stone-200 text-stone-500' : 'bg-[#c29b61]/10 text-[#c29b61]'}`}>
                                                         {item.optional ? '選配' : item.label}
                                                     </span>
                                                 </div>
-                                                <p className="text-xs text-slate-500 leading-relaxed font-light">{item.desc}</p>
+                                                <p className={`text-xs ${item.optional ? 'text-slate-400' : 'text-slate-500'} leading-relaxed font-light`}>{item.desc}</p>
                                                 <div className="mt-4 flex flex-col gap-2">
                                                     {item.liveCam && <button onClick={() => window.open(item.liveCam, '_blank')} className="w-full py-2 bg-amber-50 border border-amber-200 text-amber-700 rounded-sm text-[9px] font-bold active:bg-amber-100 uppercase tracking-widest flex items-center justify-center gap-2 transition-all"><Icon name="Camera" size={14} /> 查看山頂直播</button>}
-                                                    {!item.noMap && <button onClick={() => openMap(item.spot)} className="w-full py-2 bg-stone-50 border border-stone-100 text-slate-600 rounded-sm text-[9px] font-bold active:bg-stone-100 uppercase tracking-widest flex items-center justify-center gap-2 transition-all"><Icon name="Navigation" size={14} /> Open Navigation</button>}
+                                                    {!item.noMap && <button onClick={() => openMap(item.spot, item.customMap)} className={`w-full py-2 border rounded-sm text-[9px] font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all ${item.optional ? 'bg-white border-stone-200 text-slate-400' : 'bg-stone-50 border-stone-100 text-slate-600 active:bg-stone-100'}`}><Icon name="Navigation" size={14} /> {item.customMap ? '開啟店家連結' : 'Open Navigation'}</button>}
                                                 </div>
                                             </div>
                                         </div>
